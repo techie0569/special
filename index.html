@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Algorithm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Love Algorithm 💖</h1>
+        <p>Answer these questions and let me show you how much you mean to me!</p>
+
+        <form id="loveForm">
+            <label for="color">What's your favorite color?</label>
+            <input type="text" id="color" required>
+
+            <label for="hobby">What do you love doing the most?</label>
+            <input type="text" id="hobby" required>
+
+            <label for="memory">What's your favorite memory we've shared?</label>
+            <input type="text" id="memory" required>
+
+            <button type="submit">Generate Love Message</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>This is for you my love :</h2>
+            <p id="poem"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
