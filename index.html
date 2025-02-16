@@ -3,33 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Algorithm</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Click for Joy!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            background-image: url('https://source.unsplash.com/1600x900/?night,clouds,moon');
+            background-size: cover;
+            background-position: center;
+        }
+        #game-container {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        #click-btn {
+            background-color: #4b0082;
+            color: white;
+            font-size: 24px;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #click-btn:hover {
+            background-color: #800080;
+        }
+        #message {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #ffcccb;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Your Love Algorithm 💖</h1>
-        <p>Answer these questions and let me show you how much you mean to me!</p>
-
-        <form id="loveForm">
-            <label for="color">What's your favorite color?</label>
-            <input type="text" id="color" required>
-
-            <label for="hobby">What do you love doing the most?</label>
-            <input type="text" id="hobby" required>
-
-            <label for="memory">What's your favorite memory we've shared?</label>
-            <input type="text" id="memory" required>
-
-            <button type="submit">Generate Love Message</button>
-        </form>
-
-        <div id="result" class="hidden">
-            <h2>This is for you my love :</h2>
-            <p id="poem"></p>
-        </div>
+    <h1>ik its cheesy but you cant slap me  🌙</h1>
+    <div id="game-container">
+        <button id="click-btn">Click Me!</button>
+        <p id="score">Score: 0</p>
+        <p id="message">Let's brighten your night! 🌟</p>
     </div>
-
-    <script src="script.js"></script>
+    
+    <script>
+        let score = 0;
+        const messages = [
+            "You're amazing! 😍", 
+            "Keep smiling! 😊", 
+            "You are loved! ❤️", 
+            "Stay awesome! ✨", 
+            "You got this! 💪", 
+            "Sending virtual hugs! 🤗",
+            "Why don’t skeletons fight each other? They don’t have the guts! 💀",
+            "Why did the moon break up with the sun? It needed space! 🌕",
+            "How does the ocean say hi? It waves! 🌊"
+        ];
+        const clickSound = new Audio('https://www.fesliyanstudios.com/play-mp3/4380');
+        
+        document.getElementById("click-btn").addEventListener("click", function() {
+            score++;
+            document.getElementById("score").innerText = "Score: " + score;
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").innerText = randomMessage;
+            clickSound.play();
+        });
+    </script>
 </body>
 </html>
